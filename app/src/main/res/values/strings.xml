@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PhoneAlert</string>
+    <string name="main_title">PhoneAlert</string>
+    <string name="main_subtitle">Démo locale : déclenche l\'écran « téléphone volé » sur CET appareil.</string>
+    <string name="trigger_button">🚨 Simuler le vol</string>
+    <string name="trigger_hint">Aucun déblocage possible sur ce téléphone : seul l\'autre appareil appairé pourra le désactiver (Phase 2). Pendant les tests, redémarre le téléphone ou utilise « Forcer l\'arrêt » pour couper.</string>
+
+    <string name="alarm_section">Son de l\'alarme</string>
+    <string name="siren_police">🚓 Sirène de police (deux tons)</string>
+    <string name="siren_wail">📈 Sirène montante / descendante</string>
+    <string name="siren_yelp">⚡ Yelp rapide (urgent)</string>
+    <string name="siren_beep">🔔 Bips d\'urgence</string>
+    <string name="preview_play">▶ Aperçu du son</string>
+    <string name="preview_stop">⏹ Stop aperçu</string>
+
+    <string name="notif_channel">Verrouillage antivol</string>
+    <string name="notif_title">PhoneAlert — appareil verrouillé</string>
+    <string name="notif_text">Alarme antivol active. Déblocage uniquement par l\'autre téléphone.</string>
+
+    <string-array name="stolen_messages">
+        <item>TÉLÉPHONE VOLÉ</item>
+        <item>STOLEN PHONE</item>
+        <item>TELÉFONO ROBADO</item>
+        <item>GESTOHLENES TELEFON</item>
+        <item>TELEFONO RUBATO</item>
+        <item>TELEMÓVEL ROUBADO</item>
+        <item>هاتف مسروق</item>
+        <item>被盗手机</item>
+        <item>УКРАДЕННЫЙ ТЕЛЕФОН</item>
+        <item>盗まれた携帯電話</item>
+    </string-array>
+</resources>

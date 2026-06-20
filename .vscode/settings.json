@@ -1,0 +1,6 @@
+{
+  // Empêche VSCode de détecter les dépôts git situés DANS des dossiers PARENTS
+  // (ex. le dépôt parasite C:\Users\ng200\.git lié à bonapp/folda).
+  // "subFolders" = VSCode ne suit que le dépôt de ce dossier (PhoneAlert) et de ses sous-dossiers.
+  "git.autoRepositoryDetection": "subFolders"
+}
