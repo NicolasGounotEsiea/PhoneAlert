@@ -8,7 +8,9 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import androidx.core.app.NotificationCompat
 
 /**
@@ -18,6 +20,14 @@ import androidx.core.app.NotificationCompat
  *  - relance l'écran rouge [LockActivity] (intent direct + full-screen intent).
  */
 class LockService : Service() {
+
+    private val handler = Handler(Looper.getMainLooper())
+    private val volumeKeeper = object : Runnable {
+        override fun run() {
+            AlarmController.keepVolume(this@LockService)
+            handler.postDelayed(this, 700)
+        }
+    }
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -33,11 +43,14 @@ class LockService : Service() {
         // Démarrage / redémarrage du service => (ré)active le verrouillage
         Prefs.setLocked(this, true)
         AlarmController.start(this, Prefs.getSiren(this))
+        handler.removeCallbacks(volumeKeeper)
+        handler.post(volumeKeeper)
         launchLockScreen()
         return START_STICKY
     }
 
     private fun deactivate() {
+        handler.removeCallbacks(volumeKeeper)
         AlarmController.stop()
         Prefs.setLocked(this, false)
         LockActivity.finishIfRunning()

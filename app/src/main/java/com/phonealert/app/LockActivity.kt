@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.KeyEvent
 import android.view.WindowManager
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +61,16 @@ class LockActivity : AppCompatActivity() {
         })
 
         try { startLockTask() } catch (_: Exception) {}
+    }
+
+    // Bloque les boutons de volume pendant le verrouillage (on ne peut pas baisser l'alarme)
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        return when (event.keyCode) {
+            KeyEvent.KEYCODE_VOLUME_UP,
+            KeyEvent.KEYCODE_VOLUME_DOWN,
+            KeyEvent.KEYCODE_VOLUME_MUTE -> true
+            else -> super.dispatchKeyEvent(event)
+        }
     }
 
     override fun onResume() {
