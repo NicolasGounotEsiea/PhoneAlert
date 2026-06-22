@@ -18,6 +18,63 @@
     <string name="notif_title">PhoneAlert — appareil verrouillé</string>
     <string name="notif_text">Alarme antivol active. Déblocage uniquement par l\'autre téléphone.</string>
 
+    <string name="main_pair_button">🔗 Appairer un appareil</string>
+    <string name="main_pair_status_paired">🔗 Appairé ✓</string>
+    <string name="main_pair_status_unpaired">🔗 Non appairé</string>
+
+    <string name="pair_title">Appairage</string>
+    <string name="pair_status_paired">État : appairé ✓</string>
+    <string name="pair_status_unpaired">État : non appairé</string>
+    <string name="pair_create">Créer un code</string>
+    <string name="pair_join">Rejoindre</string>
+    <string name="pair_or">— ou —</string>
+    <string name="pair_code_hint">Code reçu (6 caractères)</string>
+    <string name="pair_creating">Création du code…</string>
+    <string name="pair_waiting">Donne ce code à l\'autre téléphone et attends qu\'il rejoigne…</string>
+    <string name="pair_connecting">Connexion…</string>
+    <string name="pair_enter_code">Entre d\'abord un code.</string>
+    <string name="pair_done">Appairé ✓</string>
+    <string name="pair_error">Erreur : %1$s</string>
+    <string name="pair_reset">Réinitialiser l\'appairage</string>
+    <string name="pair_reset_done">Appairage réinitialisé.</string>
+
+    <string name="remote_lock">🔒 Verrouiller l\'autre téléphone</string>
+    <string name="remote_unlock">🔓 Débloquer l\'autre téléphone</string>
+    <string name="remote_lock_sent">Ordre de verrouillage envoyé</string>
+    <string name="remote_unlock_sent">Ordre de déblocage envoyé</string>
+    <string name="remote_error">Erreur : %1$s</string>
+
+    <string name="watch_channel">Protection antivol</string>
+    <string name="watch_title">PhoneAlert — protection active</string>
+    <string name="watch_text">Cet appareil peut être verrouillé à distance par le groupe.</string>
+
+    <string name="group_button_manage">👥 Gérer le groupe</string>
+    <string name="group_button_join">👥 Créer ou rejoindre un groupe</string>
+    <string name="main_group_in">👥 Dans un groupe ✓</string>
+    <string name="main_group_none">👥 Aucun groupe</string>
+    <string name="members_label">Membres (appuie pour verrouiller / débloquer) :</string>
+    <string name="group_alone">Tu es seul·e dans le groupe pour l\'instant.</string>
+
+    <string name="group_title">Groupe</string>
+    <string name="group_status_in">Tu es dans un groupe ✓</string>
+    <string name="group_status_none">Tu n\'es dans aucun groupe</string>
+    <string name="group_name_hint">Ton nom (ex. Papa, Mamie…)</string>
+    <string name="group_create">Créer un groupe</string>
+    <string name="group_code_hint">Code du groupe (6 caractères)</string>
+    <string name="group_join">Rejoindre le groupe</string>
+    <string name="group_members_label">Membres :</string>
+    <string name="group_leave">Quitter le groupe</string>
+    <string name="group_need_name">Entre d\'abord ton nom.</string>
+    <string name="group_need_code">Entre le code du groupe.</string>
+    <string name="group_created">Groupe créé ! Donne ce code aux autres.</string>
+    <string name="group_joined">Groupe rejoint ✓</string>
+    <string name="group_left">Tu as quitté le groupe.</string>
+
+    <string name="lock_btn">🔒</string>
+    <string name="unlock_btn">🔓</string>
+    <string name="sent_lock">Verrouillage envoyé à %1$s</string>
+    <string name="sent_unlock">Déblocage envoyé à %1$s</string>
+
     <string-array name="stolen_messages">
         <item>TÉLÉPHONE VOLÉ</item>
         <item>STOLEN PHONE</item>

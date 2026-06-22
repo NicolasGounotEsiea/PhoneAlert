@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352891374796",
+    "project_id": "phonealert-a1ea0",
+    "storage_bucket": "phonealert-a1ea0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352891374796:android:df8c9dd38973ba9bdac669",
+        "android_client_info": {
+          "package_name": "com.phonealert.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6MUsHVl-3hm-H6zMAJJiB3QsyrwitGLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

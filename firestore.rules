@@ -1,0 +1,52 @@
+rules_version = '2';
+
+// Règles de sécurité Firestore pour PhoneAlert.
+// Modèle : pairing_codes/{CODE} (handshake d'appairage) et pairs/{pairId} (lien entre 2 appareils).
+// Accès réservé aux utilisateurs authentifiés (auth anonyme). Le code à 6 caractères
+// fait office de secret partagé pour l'appairage.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Codes d'appairage ---
+    match /pairing_codes/{code} {
+      // Tout utilisateur authentifié peut lire un code (nécessaire pour le rejoindre)
+      allow read: if request.auth != null;
+
+      // On ne peut créer qu'un code à son propre nom
+      allow create: if request.auth != null
+                    && request.resource.data.creatorUid == request.auth.uid;
+
+      // Revendication : uniquement si pas déjà revendiqué, et on s'inscrit comme claimer
+      allow update: if request.auth != null
+                    && resource.data.claimed == false
+                    && request.resource.data.claimerUid == request.auth.uid
+                    && request.resource.data.creatorUid == resource.data.creatorUid;
+    }
+
+    // --- Profils utilisateurs (stocke le token FCM) ---
+    match /users/{uid} {
+      // Chacun ne gère que son propre profil ; la Cloud Function (admin) lit les tokens.
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // --- Groupes / cercles familiaux ---
+    // Le code du groupe (6 car.) fait office de secret partagé.
+    match /groups/{groupId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null;
+    }
+
+    // --- Paires (lien entre 2 appareils) ---
+    match /pairs/{pairId} {
+      // Création par l'un des 2 membres
+      allow create: if request.auth != null
+                    && (request.resource.data.a == request.auth.uid
+                        || request.resource.data.b == request.auth.uid);
+
+      // Lecture/màj réservées aux 2 membres
+      allow read, update: if request.auth != null
+                    && (resource.data.a == request.auth.uid
+                        || resource.data.b == request.auth.uid);
+    }
+  }
+}
